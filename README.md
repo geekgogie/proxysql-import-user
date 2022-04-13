@@ -1,5 +1,6 @@
 # HOW TO USE
 To use this, I have a simple usage on how do I use it:
+```
 [root@pupnode23 ~]# ./proxysql-import-user.sh
 Desired MySQL Username and Localhost: maximusdb@192.168.40.%
 User is: maximusdb@192.168.40.%
@@ -18,9 +19,11 @@ comment: test repl 1
 Choose desired Hostgroup: 10
 Inserting user to ProxySQL....
 Insert of user success...
+```
 
+# VERIFY
 Then I can verify that the user works,
-
+```
 [root@pupnode23 ~]# mysql --default-auth=mysql_native_password -h127.0.0.1 -umaximusdb -pmaximuspword -P6033
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -56,8 +59,10 @@ mysql> select database();
 | information_schema |
 +--------------------+
 1 row in set (0.01 sec)
+```
 
 
+# SEQUENCE OF THE SCRIPT
 The sequence of the script simply ask you to
 - input the username with the hostname. i.e. make sure you add the username and hostname like for example,
 maximusdb@192.168.40.32 for example or maximusdb@192.168.% or maximusdb@localhost or maximusdb@127.0.0.1 ...
